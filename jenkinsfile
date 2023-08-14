@@ -1,0 +1,32 @@
+pipeline{
+agent any
+tools{
+maven "MAVEN"
+}
+stages{
+     stage('Build'){
+          steps{
+                echo "Project building successfully...."
+              }
+    }
+    stage('deploy'){
+      steps{
+              echo "Project Deployed successfully....."
+           }
+    }
+    stage('Test'){
+     steps{
+           echo "Project Tested successfully......"
+         }
+    }
+    stage('Release'){
+      steps{
+             echo "Project released successfully....."
+           }
+    }
+    
+}
+post{
+
+}
+}
