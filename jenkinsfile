@@ -8,7 +8,7 @@ stages{
           steps{
                 echo "Project building successfully...."
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ashok-korke/JavaProject-JenkinsPipeline.git']])
-                sh "maven -Dmaven.test.failure.ignore=true clean package"
+                bat "maven -Dmaven.test.failure.ignore=true clean package"
               }
     }
     stage('deploy'){
