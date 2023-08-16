@@ -10,6 +10,12 @@ stages{
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ashok-korke/JavaProject-JenkinsPipeline.git']])
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
               }
+              post{
+              success{
+              	      echo "Archiving artifacts....."
+              	      archiveArtifacts artifacts: '**/target/*.war'
+                     }
+              }
     }
     stage('deploy'){
       steps{
