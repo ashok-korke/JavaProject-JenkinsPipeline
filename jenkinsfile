@@ -14,6 +14,7 @@ stages{
     stage('deploy'){
       steps{
               echo "Project Deployed successfully....."
+              deploy adapters: [tomcat9(credentialsId: '9032b316-9748-4599-9151-12bce65e6be9', path: '', url: 'http://localhost:8080/')], contextPath: 'JavaProject-JenkinsPipeline', war: '**/*.war'
            }
     }
     stage('Test'){
