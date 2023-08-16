@@ -15,8 +15,8 @@ stages{
  stage('Static Analysis') {
       withSonarQubeEnv('SonarQube1') 
       {
-        bat 'mvn clean package sonar:sonar
-   	echo 'Static Analysis Completed' 
+        bat 'mvn clean package sonar:sonar'
+   	   echo 'Static Analysis Completed' 
       }
    
     stage("Quality Gate"){
